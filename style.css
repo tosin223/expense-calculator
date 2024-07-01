@@ -1,0 +1,204 @@
+/* Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+input {
+  border: none;
+  font-family: inherit;
+}
+button {
+  border: none;
+  font: inherit;
+  background: none;
+}
+ul {
+  list-style: none;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(15px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+/* BASE STYLE */
+body {
+  background: rgb(225, 227, 230);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+.wrapper {
+  display: flex;
+  height: 490px;
+  animation: fade-in 0.5s;
+}
+.app {
+  background-color: #fff;
+  width: 400px;
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(124, 123, 123, 0.7);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40px;
+}
+.top {
+  background: #f2f2f2;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.first-heading {
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+  font-weight: 500;
+}
+.balance-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.overview {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+.section {
+  flex: 1;
+  padding: 20px 0;
+}
+.section:nth-child(2) {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+.second-heading {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 3px;
+}
+.number {
+}
+.form {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: auto;
+}
+.label {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 10px; /*you cannot give inline level element margin bottom except you turn it to a block level elenent*/
+}
+.input {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+}
+.btn {
+  width: 100%;
+  cursor: pointer;
+  background-color: #0072e4;
+  /*padding: 15px 25px;*/
+  height: 45px;
+  border-radius: 59px;
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 20px;
+  transition: all 0.4s;
+}
+.btn:hover {
+  background-color: #0068cf;
+}
+.transaction-section {
+  margin-left: 30px;
+  width: 250px;
+}
+.third-heading {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.transactions {
+}
+.transaction {
+  background: #fff;
+  padding: 15px 20px;
+  margin-bottom: 8px;
+  border-radius: 3px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  animation: fade-in 0.5s;
+}
+.transaction_text {
+}
+.transaction_amount {
+}
+.transaction_btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(50%, -50%);
+  background: #000;
+  width: 100%;
+  height: 100%;
+  color: rgba(255, 255, 255, 0.85);
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.transaction:hover .transaction_btn {
+  transform: translate(-50%, -50%);
+}
+.transaction-income {
+  border-right: 5px solid green;
+}
+.transaction-expense {
+  border-right: 5px solid red;
+}
+
+@media (max-width: 800px) {
+  .wrapper {
+    flex-direction: column;
+    height: initial;
+    row-gap: 20px;
+    margin: 50px 0;
+  }
+  .transaction-section {
+    margin-left: 0;
+  }
+}
+@media (max-width: 500px) {
+  body {
+    align-items: start;
+  }
+  .wrapper {
+    width: 100%;
+  }
+  .app {
+    width: 100%;
+    border: none;
+    margin: 0;
+  }
+}
